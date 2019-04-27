@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Lucida Console', Monaco, monospace;
+      }
+      .container {
+        display: flex;
+      }
+      .controls {
+        display: inline-grid;
+        grid-template: "label slider value";
+      }
+      .controls > * {
+        margin: 4px;
+        align-self: center;
+      }
+      .controls :nth-child(3n - 2) {
+        justify-self: end; 
+      }
+      .controls :nth-child(3n - 1) {
+        justify-self: center;
+      }
+      .controls :nth-child(3n - 0) {
+        justify-self: start;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <canvas id="canvas" height="150" width="150"></canvas>
+      <div class="controls">
+        <label for="sliderX">x</label>
+        <input type="range" id="sliderX" name="sliderX" min="-75" max="75" value="0">
+        <span id="valueX"></span>
+        <label for="sliderY">y</label>
+        <input type="range" id="sliderY" name="sliderY" min="-75" max="75" value="0">
+        <span id="valueY"></span>
+        <label for="sliderAngle">angle</label>
+        <input type="range" id="sliderAngle" name="sliderAngle" min="0" max="360" value="0">
+        <span id="valueAngle"></span>
+        <label for="sliderScaleX">scaleX</label>
+        <input type="range" id="sliderScaleX" name="sliderScaleX" min="-2.0" max="2.0" step="0.01" value="1.0">
+        <span id="valueScaleX"></span>
+        <label for="sliderScaleY">scaleY</label>
+        <input type="range" id="sliderScaleY" name="sliderScaleY" min="-2.0" max="2.0" step="0.01" value="1.0">
+        <span id="valueScaleY"></span>
+      </div>
+    </div>
+  </body>
+</html>
