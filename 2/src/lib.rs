@@ -331,7 +331,6 @@ impl Renderer {
         let colors_location = colors.as_ptr() as u32 / 1;
         let colr_array = js_sys::Uint8Array::new(&colors_memory_buffer)
             .subarray(colors_location, colors_location + colors.len() as u32);
-        web_sys::console::log_1(&colr_array);
 
         let a_position = context.get_attrib_location(&program, "a_position");
         context.enable_vertex_attrib_array(a_position as u32);
